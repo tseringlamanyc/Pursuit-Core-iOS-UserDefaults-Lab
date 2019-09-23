@@ -1,12 +1,8 @@
 # Pursuit-Core-iOS-UserDefaults-Lab
 
 
-# HoriOScope
+Use the endpoint at: http://sandipbgt.com/theastrologer/api/horoscope/gemini/today to build a Horoscope app.
 
-
-We will be using the endpoint at: http://sandipbgt.com/theastrologer/api/horoscope/gemini/today to get our Horoscope data
-This API was made to return Horoscope information when a post request is made to their URL https://aztro.herokuapp.com
-with the name of the sign and what day's (today, tomorrow, yesterday) information is requested
 
 This app will have two states:
 
@@ -27,5 +23,3 @@ In this state there are no defaults saved. Prompt the user to add and save this 
 Immediately present the user's current horoscope.
 
 Your user should always be able to edit their name and birthday and return different results upon later launches.
-
-
