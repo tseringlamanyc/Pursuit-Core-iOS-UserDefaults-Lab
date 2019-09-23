@@ -22,4 +22,4 @@ In this state there are no defaults saved. Prompt the user to add and save this 
 
 Immediately present the user's current horoscope.
 
-Your user should always be able to edit their name and birthday and return different results upon later launches.
+Your user should always be able to edit their name and birthday to see their updated horoscope, and persist that information to UserDefaults.
