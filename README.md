@@ -10,8 +10,6 @@ This app will have two states:
 - User defaults set
 
 
-V1:
-
 When the app loads (App Delegate), it should check User Defaults to see whether a user's information was saved with a name and horoscope sign.
  
 
