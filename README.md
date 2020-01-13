@@ -32,7 +32,7 @@ Refactor you app to instead prompt for the user's birthday.  Then, translate the
 - Taurus dates: April 20 – May 20
 - Gemini dates: May 21 – June 20
 - Cancer dates: June 21 – July 22
-- Leo dates: July 32 – August 22
+- Leo dates: July 22 – August 22
 - Virgo dates: August 23 – September 22
 - Libra dates: September 23 – October 22
 - Scorpio dates: October 23 – November 21
