@@ -8,17 +8,17 @@
 
 import Foundation
 
-enum Horoscope {
-    case aries
-    case taurus
-    case gemini
-    case cancer
-    case leo
-    case virgo
-    case libra
-    case scorpio
-    case sagittarius
-    case capricorn
-    case aquarius
-    case pisces
+enum Horoscope: String {
+    case aries = "aries"
+    case taurus = "taurus"
+    case gemini = "gemini"
+    case cancer = "cancer"
+    case leo = "leo"
+    case virgo = "virgo"
+    case libra = "libra"
+    case scorpio = "scorpio"
+    case sagittarius = "sagittarius"
+    case capricorn = "capricorn"
+    case aquarius = "aquarius"
+    case pisces = "pisces"
 }
