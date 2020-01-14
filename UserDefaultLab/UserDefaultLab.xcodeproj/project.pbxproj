@@ -13,6 +13,7 @@
 		5274EA6223CD23FD006AF765 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5274EA6023CD23FD006AF765 /* Main.storyboard */; };
 		5274EA6423CD23FE006AF765 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5274EA6323CD23FE006AF765 /* Assets.xcassets */; };
 		5274EA6723CD23FE006AF765 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5274EA6523CD23FE006AF765 /* LaunchScreen.storyboard */; };
+		5274EA7023CD3F7F006AF765 /* UserHoroscope.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5274EA6F23CD3F7F006AF765 /* UserHoroscope.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		5274EA6323CD23FE006AF765 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5274EA6623CD23FE006AF765 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5274EA6823CD23FE006AF765 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5274EA6F23CD3F7F006AF765 /* UserHoroscope.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserHoroscope.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +42,7 @@
 		5274EA4E23CD23FD006AF765 = {
 			isa = PBXGroup;
 			children = (
+				5274EA6E23CD3F00006AF765 /* Helpers */,
 				5274EA5923CD23FD006AF765 /* UserDefaultLab */,
 				5274EA5823CD23FD006AF765 /* Products */,
 			);
@@ -63,8 +66,16 @@
 				5274EA6323CD23FE006AF765 /* Assets.xcassets */,
 				5274EA6523CD23FE006AF765 /* LaunchScreen.storyboard */,
 				5274EA6823CD23FE006AF765 /* Info.plist */,
+				5274EA6F23CD3F7F006AF765 /* UserHoroscope.swift */,
 			);
 			path = UserDefaultLab;
+			sourceTree = "<group>";
+		};
+		5274EA6E23CD3F00006AF765 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,6 +152,7 @@
 				5274EA5F23CD23FD006AF765 /* ViewController.swift in Sources */,
 				5274EA5B23CD23FD006AF765 /* AppDelegate.swift in Sources */,
 				5274EA5D23CD23FD006AF765 /* SceneDelegate.swift in Sources */,
+				5274EA7023CD3F7F006AF765 /* UserHoroscope.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

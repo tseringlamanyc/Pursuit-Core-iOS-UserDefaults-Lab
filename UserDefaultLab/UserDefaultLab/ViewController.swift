@@ -9,12 +9,21 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    @IBOutlet weak var horoscopeLabel: UILabel!
+    @IBOutlet weak var horoImage: UIImageView!
+    @IBOutlet weak var todaysHoroscope: UITextView!
+    @IBOutlet weak var datePick: UIDatePicker!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
-
+    
+    
+    
+    @IBAction func dateChanged(_ sender: UIDatePicker) {
+    }
+    
 
 }
 
