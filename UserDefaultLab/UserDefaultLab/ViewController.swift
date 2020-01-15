@@ -15,28 +15,75 @@ class ViewController: UIViewController {
     @IBOutlet weak var todaysHoroscope: UITextView!
     @IBOutlet weak var datePick: UIDatePicker!
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         datePick.datePickerMode = .date
     }
     
+    let dateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MM/d/yyyy"
+        formatter.timeZone = .current
+        return formatter
+    }()
     
+    func getDateRange(from start: String, to end: String) -> ClosedRange<Date> {
+        let startDate = dateFormatter.date(from: start) ?? Date()
+        let endDate = dateFormatter.date(from: end) ?? Date()
+        return startDate...endDate
+    }
+    
+    func getDate(from str: String) -> Date {
+        return dateFormatter.date(from: str) ?? Date()
+    }
+    
+    let currentYear = "2020"
+    let previousYear = "2019"
     
     @IBAction func dateChanged(_ sender: UIDatePicker) {
-        let dateFormatter = DateFormatter()
-        let date = sender.date.description
-         
-        // US English Locale (en_US)
-        dateFormatter.locale = Locale(identifier: "en_US")
-        dateFormatter.setLocalizedDateFormatFromTemplate("MMMMd")
-        switch date {
-        case "2020-01-10":
-            horoImage.image = UIImage(named: "aries")
+        switch sender.date {
+        case getDate(from: "03/21/\(previousYear)")...getDate(from: "04/19/\(currentYear)"):
+            horoImage.image = UIImage(named: Horoscope.aries.rawValue)
+            horoscopeLabel.text = "Your horoscope is \(Horoscope.aries.rawValue)"
+        case getDate(from: "04/20/\(previousYear)")...getDate(from: "05/20/\(currentYear)"):
+            horoImage.image = UIImage(named: Horoscope.taurus.rawValue)
+            horoscopeLabel.text = "Your horoscope is \(Horoscope.taurus.rawValue)"
+        case getDate(from: "05/21/\(previousYear)")...getDate(from: "06/20/\(currentYear)"):
+            horoImage.image = UIImage(named: Horoscope.gemini.rawValue)
+            horoscopeLabel.text = "Your horoscope is \(Horoscope.gemini.rawValue)"
+        case getDate(from: "06/21/\(previousYear)")...getDate(from: "07/22/\(currentYear)"):
+            horoImage.image = UIImage(named: Horoscope.cancer.rawValue)
+            horoscopeLabel.text = "Your horoscope is \(Horoscope.cancer.rawValue)"
+        case getDate(from: "07/23/\(previousYear)")...getDate(from: "08/22/\(currentYear)"):
+            horoImage.image = UIImage(named: Horoscope.leo.rawValue)
+            horoscopeLabel.text = "Your horoscope is \(Horoscope.leo.rawValue)"
+        case getDate(from: "08/23/\(previousYear)")...getDate(from: "09/22/\(currentYear)"):
+            horoImage.image = UIImage(named: Horoscope.virgo.rawValue)
+            horoscopeLabel.text = "Your horoscope is \(Horoscope.virgo.rawValue)"
+        case getDate(from: "09/23/\(previousYear)")...getDate(from: "10/22/\(currentYear)"):
+            horoImage.image = UIImage(named: Horoscope.libra.rawValue)
+            horoscopeLabel.text = "Your horoscope is \(Horoscope.libra.rawValue)"
+        case getDate(from: "10/23/\(previousYear)")...getDate(from: "11/21/\(currentYear)"):
+            horoImage.image = UIImage(named: Horoscope.scorpio.rawValue)
+            horoscopeLabel.text = "Your horoscope is \(Horoscope.scorpio.rawValue)"
+        case getDate(from: "11/22/\(previousYear)")...getDate(from: "12/21/\(currentYear)"):
+            horoImage.image = UIImage(named: Horoscope.sagittarius.rawValue)
+            horoscopeLabel.text = "Your horoscope is \(Horoscope.sagittarius.rawValue)"
+        case getDate(from: "12/22/\(previousYear)")...getDate(from: "01/19/\(currentYear)"):
+            horoImage.image = UIImage(named: Horoscope.capricorn.rawValue)
+            horoscopeLabel.text = "Your horoscope is \(Horoscope.capricorn.rawValue)"
+        case getDate(from: "01/20/\(previousYear)")...getDate(from: "02/18/\(currentYear)"):
+            horoImage.image = UIImage(named: Horoscope.aquarius.rawValue)
+            horoscopeLabel.text = "Your horoscope is \(Horoscope.aquarius.rawValue)"
+        case getDate(from: "02/19/\(previousYear)")...getDate(from: "03/20/\(currentYear)"):
+            horoImage.image = UIImage(named: Horoscope.pisces.rawValue)
+            horoscopeLabel.text = "Your horoscope is \(Horoscope.pisces.rawValue)"
         default:
             break
         }
     }
     
-
 }
 
