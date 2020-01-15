@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="n89-FC-4W4">
-                                <rect key="frame" x="47" y="337" width="320" height="222"/>
+                                <rect key="frame" x="47" y="340" width="320" height="216"/>
                                 <connections>
                                     <action selector="dateChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="4sy-Iv-nSd"/>
                                 </connections>
@@ -28,7 +28,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3K5-m4-8fm">
-                                <rect key="frame" x="105" y="587" width="204" height="30"/>
+                                <rect key="frame" x="105" y="584" width="204" height="30"/>
                                 <state key="normal" title="Use this horoscope as default"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select your brithday " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mUI-VA-sTA">
@@ -37,21 +37,21 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your horoscope is " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GgD-Et-GBk">
-                                <rect key="frame" x="20" y="187" width="374" height="17"/>
-                                <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Your horoscope is " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GgD-Et-GBk">
+                                <rect key="frame" x="20" y="187" width="374" height="20"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="timelapse" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="b6d-Dl-gv5">
-                                <rect key="frame" x="87" y="211.5" width="240" height="126"/>
+                                <rect key="frame" x="87" y="214.5" width="240" height="126"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="125" id="Dpj-Sd-tQR"/>
                                     <constraint firstAttribute="width" constant="240" id="Ujs-UC-oyp"/>
                                 </constraints>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="7Fb-ui-3S3">
-                                <rect key="frame" x="20" y="637" width="374" height="128"/>
+                                <rect key="frame" x="20" y="634" width="374" height="228"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -62,24 +62,24 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="3K5-m4-8fm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="105" id="0bV-6O-YcX"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="7Fb-ui-3S3" secondAttribute="trailing" constant="20" id="1WJ-kE-fXk"/>
+                            <constraint firstItem="7Fb-ui-3S3" firstAttribute="top" secondItem="3K5-m4-8fm" secondAttribute="bottom" constant="20" id="237-38-ytO"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="b6d-Dl-gv5" secondAttribute="trailing" constant="87" id="45t-by-lCf"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="mUI-VA-sTA" secondAttribute="trailing" constant="129" id="482-Z2-DxU"/>
                             <constraint firstItem="b6d-Dl-gv5" firstAttribute="top" secondItem="GgD-Et-GBk" secondAttribute="bottom" constant="8" id="6du-ie-seY"/>
                             <constraint firstItem="b6d-Dl-gv5" firstAttribute="centerX" secondItem="3K5-m4-8fm" secondAttribute="centerX" id="9wl-cP-UB2"/>
                             <constraint firstItem="n89-FC-4W4" firstAttribute="top" secondItem="b6d-Dl-gv5" secondAttribute="bottom" id="AaM-0I-wl1"/>
                             <constraint firstItem="r5W-z8-xW5" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="Ake-Jm-Llg"/>
-                            <constraint firstItem="7Fb-ui-3S3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="LwA-Gr-n1z"/>
+                            <constraint firstItem="7Fb-ui-3S3" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="MvB-Vv-lRS"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="3K5-m4-8fm" secondAttribute="trailing" constant="105" id="NHQ-Bv-DL4"/>
-                            <constraint firstItem="7Fb-ui-3S3" firstAttribute="top" secondItem="3K5-m4-8fm" secondAttribute="bottom" constant="20" id="P9O-xj-xBY"/>
                             <constraint firstItem="mUI-VA-sTA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="126" id="ZSJ-js-GKg"/>
+                            <constraint firstItem="7Fb-ui-3S3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="avu-hX-WhI"/>
                             <constraint firstItem="mUI-VA-sTA" firstAttribute="top" secondItem="r5W-z8-xW5" secondAttribute="bottom" constant="20" id="awA-3X-CmK"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="7Fb-ui-3S3" secondAttribute="bottom" constant="97" id="bLi-tO-ScD"/>
                             <constraint firstItem="b6d-Dl-gv5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="87" id="bhs-ZO-ipP"/>
                             <constraint firstItem="3K5-m4-8fm" firstAttribute="top" secondItem="n89-FC-4W4" secondAttribute="bottom" constant="28" id="efn-q2-2Bf"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="GgD-Et-GBk" secondAttribute="trailing" constant="20" id="hI6-fW-iL7"/>
                             <constraint firstItem="n89-FC-4W4" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="k7L-fY-lwg"/>
                             <constraint firstItem="r5W-z8-xW5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="126" id="lpX-rR-rHV"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="7Fb-ui-3S3" secondAttribute="trailing" constant="20" id="nHt-vz-sdo"/>
                             <constraint firstItem="n89-FC-4W4" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="oGp-KN-IDO"/>
                             <constraint firstItem="GgD-Et-GBk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="ooI-fQ-d6C"/>
                             <constraint firstItem="GgD-Et-GBk" firstAttribute="top" secondItem="mUI-VA-sTA" secondAttribute="bottom" constant="38" id="zBo-4K-aA7"/>

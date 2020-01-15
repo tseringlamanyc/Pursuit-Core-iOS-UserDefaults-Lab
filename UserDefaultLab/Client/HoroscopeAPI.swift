@@ -9,8 +9,8 @@
 import Foundation
 
 struct HoroscopeAPI {
-    static func getHoroscope(userSign: String, completionHandler: @escaping (Result<TodaysSign,AppError>) -> ()) {
-        let endpointURL = "http://sandipbgt.com/theastrologer/api/horoscope/\(userSign)/today"
+    static func getHoroscope(completionHandler: @escaping (Result<[TodaysSign],AppError>) -> ()) {
+        let endpointURL = "http://sandipbgt.com/theastrologer/api/horoscope/all/today"
         guard let url = URL(string: endpointURL) else {
             completionHandler(.failure(.badURL(endpointURL)))
             return
@@ -22,7 +22,7 @@ struct HoroscopeAPI {
                 completionHandler(.failure(.networkClientError(appError)))
             case .success(let data):
                 do {
-                    let horoData = try JSONDecoder().decode(TodaysSign.self, from: data)
+                    let horoData = try JSONDecoder().decode([TodaysSign].self, from: data)
                     completionHandler(.success(horoData))
                 } catch {
                     completionHandler(.failure(.decodingError(error)))
