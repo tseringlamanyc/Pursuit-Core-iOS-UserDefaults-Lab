@@ -30,6 +30,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3K5-m4-8fm">
                                 <rect key="frame" x="105" y="584" width="204" height="30"/>
                                 <state key="normal" title="Use this horoscope as default"/>
+                                <connections>
+                                    <action selector="saveHoroscope:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NlJ-rZ-IXK"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select your brithday " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mUI-VA-sTA">
                                 <rect key="frame" x="126" y="105" width="159" height="44"/>

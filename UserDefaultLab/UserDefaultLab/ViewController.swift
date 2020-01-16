@@ -57,6 +57,9 @@ class ViewController: UIViewController {
         }
     }
     
+    @IBAction func saveHoroscope(_ sender: Any) {
+    }
+    
     @IBAction func dateChanged(_ sender: UIDatePicker) {
         switch sender.date {
         case getDate(from: "03/21/\(currentYear)")...getDate(from: "04/19/\(currentYear)"):

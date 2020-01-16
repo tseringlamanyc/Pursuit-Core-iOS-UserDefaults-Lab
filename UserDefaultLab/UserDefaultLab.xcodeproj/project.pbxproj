@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		52398A9E23CFB0650058A9E5 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52398A9D23CFB0650058A9E5 /* Settings.swift */; };
 		5274EA5B23CD23FD006AF765 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5274EA5A23CD23FD006AF765 /* AppDelegate.swift */; };
 		5274EA5D23CD23FD006AF765 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5274EA5C23CD23FD006AF765 /* SceneDelegate.swift */; };
 		5274EA5F23CD23FD006AF765 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5274EA5E23CD23FD006AF765 /* ViewController.swift */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		52398A9D23CFB0650058A9E5 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		5274EA5723CD23FD006AF765 /* UserDefaultLab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UserDefaultLab.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5274EA5A23CD23FD006AF765 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5274EA5C23CD23FD006AF765 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				5274EA7723CD4273006AF765 /* Json.swift */,
+				52398A9D23CFB0650058A9E5 /* Settings.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -181,6 +184,7 @@
 				5274EA7A23CD4281006AF765 /* HoroscopeAPI.swift in Sources */,
 				5274EA5F23CD23FD006AF765 /* ViewController.swift in Sources */,
 				5274EA5B23CD23FD006AF765 /* AppDelegate.swift in Sources */,
+				52398A9E23CFB0650058A9E5 /* Settings.swift in Sources */,
 				5274EA7423CD4213006AF765 /* AppError.swift in Sources */,
 				5274EA7223CD41F9006AF765 /* URLSession.swift in Sources */,
 				5274EA5D23CD23FD006AF765 /* SceneDelegate.swift in Sources */,

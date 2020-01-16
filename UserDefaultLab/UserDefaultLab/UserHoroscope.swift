@@ -21,4 +21,6 @@ enum Horoscope: String {
     case capricorn = "capricorn"
     case aquarius = "aquarius"
     case pisces = "pisces"
+    
+    
 }
