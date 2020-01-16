@@ -26,24 +26,26 @@ class ViewController: UIViewController {
     
     var currentSign = Horoscope.empty {
         didSet {
-            horoscopeLabel.text = "Your horoscope is"
+            horoscopeLabel.text = "Your horoscope is \(currentSign.rawValue)"
             UserPeference.shared.updateDefault(value: currentSign.rawValue, key: UserKey.userSign)
         }
     }
     
     var currentPic = Horoscope.empty {
         didSet {
-            horoImage.image = UIImage(named: "person.fill")
+            horoImage.image = UIImage(named: currentPic.rawValue)
             UserPeference.shared.updateDefault(value: currentPic.rawValue, key: UserKey.userPic)
         }
     }
     
     var currentReading = Horoscope.empty {
         didSet {
-            todaysHoroscope.text = "N/A"
+            todaysHoroscope.text = currentReading.rawValue
             UserPeference.shared.updateDefault(value: currentReading.rawValue, key: UserKey.userToday)
         }
     }
+    
+    
     
     func loadSign() {
         HoroscopeAPI.getHoroscope { [weak self] (result) in
@@ -60,16 +62,16 @@ class ViewController: UIViewController {
     
     func updateUI() {
         let signStr: String = UserPeference.shared.getDefault(key: UserKey.userSign) ?? ""
-        let userSign = Horoscope(rawValue: signStr) ?? Horoscope.aries
-        currentSign = userSign
+        let userSign = Horoscope(rawValue: signStr)
+        currentSign = userSign!
         
         let picStr: String = UserPeference.shared.getDefault(key: UserKey.userPic) ?? ""
-        let userPic = Horoscope(rawValue: picStr) ?? Horoscope.aries
-        currentPic = userPic
+        let userPic = Horoscope(rawValue: picStr)
+        currentPic = userPic!
         
         let todayStr: String = UserPeference.shared.getDefault(key: UserKey.userToday) ?? ""
-        let userToday = Horoscope(rawValue: todayStr) ?? Horoscope.aries
-        currentReading = userToday
+        let userToday = Horoscope(rawValue: todayStr)
+        currentReading = userToday!
     }
     
     @IBAction func saveHoroscope(_ sender: Any) {
