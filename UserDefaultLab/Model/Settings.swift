@@ -14,8 +14,6 @@ struct UserKey {
     static let userToday = "Today"
 }
 
-
-
 class UserPeference {
     private init() {}
     

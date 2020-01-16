@@ -21,28 +21,29 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         datePick.datePickerMode = .date
         loadSign()
-        todaysHoroscope.text = "Sup"
+        updateUI()
     }
     
-    let dateFormatter: DateFormatter = {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "MM/d/yyyy"
-        formatter.timeZone = .current
-        return formatter
-    }()
-    
-    func getDateRange(from start: String, to end: String) -> ClosedRange<Date> {
-        let startDate = dateFormatter.date(from: start) ?? Date()
-        let endDate = dateFormatter.date(from: end) ?? Date()
-        return startDate...endDate
+    var currentSign = Horoscope.empty {
+        didSet {
+            horoscopeLabel.text = "Your horoscope is"
+            UserPeference.shared.updateDefault(value: currentSign.rawValue, key: UserKey.userSign)
+        }
     }
     
-    func getDate(from str: String) -> Date {
-        return dateFormatter.date(from: str) ?? Date()
+    var currentPic = Horoscope.empty {
+        didSet {
+            horoImage.image = UIImage(named: "person.fill")
+            UserPeference.shared.updateDefault(value: currentPic.rawValue, key: UserKey.userPic)
+        }
     }
     
-    let currentYear = "2020"
-    let previousYear = "2019"
+    var currentReading = Horoscope.empty {
+        didSet {
+            todaysHoroscope.text = "N/A"
+            UserPeference.shared.updateDefault(value: currentReading.rawValue, key: UserKey.userToday)
+        }
+    }
     
     func loadSign() {
         HoroscopeAPI.getHoroscope { [weak self] (result) in
@@ -57,10 +58,46 @@ class ViewController: UIViewController {
         }
     }
     
+    func updateUI() {
+        let signStr: String = UserPeference.shared.getDefault(key: UserKey.userSign) ?? ""
+        let userSign = Horoscope(rawValue: signStr) ?? Horoscope.aries
+        currentSign = userSign
+        
+        let picStr: String = UserPeference.shared.getDefault(key: UserKey.userPic) ?? ""
+        let userPic = Horoscope(rawValue: picStr) ?? Horoscope.aries
+        currentPic = userPic
+        
+        let todayStr: String = UserPeference.shared.getDefault(key: UserKey.userToday) ?? ""
+        let userToday = Horoscope(rawValue: todayStr) ?? Horoscope.aries
+        currentReading = userToday
+    }
+    
     @IBAction func saveHoroscope(_ sender: Any) {
+        
     }
     
     @IBAction func dateChanged(_ sender: UIDatePicker) {
+        
+        let dateFormatter: DateFormatter = {
+            let formatter = DateFormatter()
+            formatter.dateFormat = "MM/d/yyyy"
+            formatter.timeZone = .current
+            return formatter
+        }()
+        
+        func getDateRange(from start: String, to end: String) -> ClosedRange<Date> {
+            let startDate = dateFormatter.date(from: start) ?? Date()
+            let endDate = dateFormatter.date(from: end) ?? Date()
+            return startDate...endDate
+        }
+        
+        func getDate(from str: String) -> Date {
+            return dateFormatter.date(from: str) ?? Date()
+        }
+        
+        let currentYear = "2020"
+        let previousYear = "2019"
+        
         switch sender.date {
         case getDate(from: "03/21/\(currentYear)")...getDate(from: "04/19/\(currentYear)"):
             horoImage.image = UIImage(named: Horoscope.aries.rawValue)

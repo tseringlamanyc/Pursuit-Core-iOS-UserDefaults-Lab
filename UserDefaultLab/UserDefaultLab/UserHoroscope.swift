@@ -9,6 +9,7 @@
 import Foundation
 
 enum Horoscope: String {
+    case empty = ""
     case aries = "aries"
     case taurus = "taurus"
     case gemini = "gemini"
