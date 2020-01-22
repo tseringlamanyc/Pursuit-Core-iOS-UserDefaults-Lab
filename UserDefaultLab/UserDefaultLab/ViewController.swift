@@ -17,11 +17,25 @@ class ViewController: UIViewController {
     
     var allSigns = [TodaysSign]()
     
+    var thing:Date? {
+        didSet{
+         print(thing)
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         datePick.datePickerMode = .date
         loadSign()
         updateUI()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        guard let datething:Date = UserPeference.shared.getDefault(key: "saving date") else {
+            return
+        }
+        datePick.setDate(datething, animated: true)
+        
     }
     
     var currentSign = Horoscope.empty {
@@ -76,6 +90,9 @@ class ViewController: UIViewController {
     
     @IBAction func saveHoroscope(_ sender: Any) {
         
+        UserPeference.shared.updateDefault(value: thing, key: "saving date")
+        
+        
     }
     
     @IBAction func dateChanged(_ sender: UIDatePicker) {
@@ -99,6 +116,9 @@ class ViewController: UIViewController {
         
         let currentYear = "2020"
         let previousYear = "2019"
+        
+        thing = sender.date
+        
         
         switch sender.date {
         case getDate(from: "03/21/\(currentYear)")...getDate(from: "04/19/\(currentYear)"):

@@ -21,6 +21,7 @@ class UserPeference {
     
     func updateDefault<T>(value: T, key: String) {
         UserDefaults.standard.set(value, forKey: key)
+        
     }
     
     func getDefault<T>(key: String) -> T? {
