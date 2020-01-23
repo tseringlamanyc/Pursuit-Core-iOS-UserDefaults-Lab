@@ -30,25 +30,15 @@ class ViewController: UIViewController {
         updateUI()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        guard let datething:Date = UserPeference.shared.getDefault(key: "saving date") else {
-            return
-        }
-        datePick.setDate(datething, animated: true)
-        
-    }
-    
     var currentSign = Horoscope.empty {
         didSet {
             horoscopeLabel.text = "Your horoscope is \(currentSign.rawValue)"
-            UserPeference.shared.updateDefault(value: currentSign.rawValue, key: UserKey.userSign)
         }
     }
     
-    var currentPic = Horoscope.empty {
+    var currentPic = "person.fill" {
         didSet {
-            horoImage.image = UIImage(named: currentPic.rawValue)
-            UserPeference.shared.updateDefault(value: currentPic.rawValue, key: UserKey.userPic)
+            horoImage.image = UIImage(named: currentPic)
         }
     }
     
@@ -58,8 +48,6 @@ class ViewController: UIViewController {
             UserPeference.shared.updateDefault(value: currentReading.rawValue, key: UserKey.userToday)
         }
     }
-    
-    
     
     func loadSign() {
         HoroscopeAPI.getHoroscope { [weak self] (result) in
@@ -75,24 +63,22 @@ class ViewController: UIViewController {
     }
     
     func updateUI() {
-        let signStr: String = UserPeference.shared.getDefault(key: UserKey.userSign) ?? ""
-        let userSign = Horoscope(rawValue: signStr)
-        currentSign = userSign!
-        
-        let picStr: String = UserPeference.shared.getDefault(key: UserKey.userPic) ?? ""
-        let userPic = Horoscope(rawValue: picStr)
-        currentPic = userPic!
-        
-        let todayStr: String = UserPeference.shared.getDefault(key: UserKey.userToday) ?? ""
-        let userToday = Horoscope(rawValue: todayStr)
-        currentReading = userToday!
+        guard let datething:Date = UserPeference.shared.getDefault(key: UserKey.userSign), let signthing: String = UserPeference.shared.getDefault(key: UserKey.userSun), let todaything: String = UserPeference.shared.getDefault(key: UserKey.userToday), let picthing: String = UserPeference.shared.getDefault(key: UserKey.userPic) else {
+            return
+        }
+        datePick.setDate(datething, animated: true)
+        horoscopeLabel.text = signthing
+        todaysHoroscope.text = todaything
+        DispatchQueue.main.async {
+            self.horoImage.image = UIImage(named: picthing)
+        }
     }
     
     @IBAction func saveHoroscope(_ sender: Any) {
-        
-        UserPeference.shared.updateDefault(value: thing, key: "saving date")
-        
-        
+        UserPeference.shared.updateDefault(value: thing, key: UserKey.userSign)
+        UserPeference.shared.updateDefault(value: horoscopeLabel.text, key: UserKey.userSun)
+        UserPeference.shared.updateDefault(value: todaysHoroscope.text, key: UserKey.userToday)
+        UserPeference.shared.updateDefault(value: currentPic, key: UserKey.userPic)
     }
     
     @IBAction func dateChanged(_ sender: UIDatePicker) {

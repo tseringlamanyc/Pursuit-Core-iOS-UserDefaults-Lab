@@ -12,6 +12,7 @@ struct UserKey {
     static let userSign = "Sign"
     static let userPic = "Pic"
     static let userToday = "Today"
+    static let userSun = "Sun"
 }
 
 class UserPeference {
